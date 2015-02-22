@@ -7,7 +7,7 @@ Set the current working directory so it contains `getdata-projectfiles-UCI HAR D
 ##Function `read_in_data()`
 
 The function (1) reads in parts of the above described file (test and train data, labels), (2) combines test and train data, (3) extracts only means and standard deviations, (4) properly apply column names, and (4) calculates averages. It results in two data.frames called `data_set` and `average_set`. `data_set` contains the combined data of means and standard deviations with proper column names. `averages_set` contains the averages over the activities.
-
+The variable `time_stamp` is set to the time when the function is called to record the time stamp of the data.
 
 ##Resulting Data
 
@@ -26,21 +26,37 @@ These signals were used to estimate variables of the feature vector for each pat
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
 tBodyAcc-XYZ
+
 tGravityAcc-XYZ
+
 tBodyAccJerk-XYZ
+
 tBodyGyro-XYZ
+
 tBodyGyroJerk-XYZ
+
 tBodyAccMag
+
 tGravityAccMag
+
 tBodyAccJerkMag
+
 tBodyGyroMag
+
 tBodyGyroJerkMag
+
 fBodyAcc-XYZ
+
 fBodyAccJerk-XYZ
+
 fBodyGyro-XYZ
+
 fBodyAccMag
+
 fBodyAccJerkMag
+
 fBodyGyroMag
+
 fBodyGyroJerkMag
 
 ##Data Frames
@@ -49,82 +65,154 @@ fBodyGyroJerkMag
 Contains six rows named
 
 LAYING
+
 SITTING
+
 STANDING
+
 WALKING
+
 WALKING_DOWNSTAIRS
+
 WALKING_UPSTAIRS
 
-each row contains 66 columns with the averages of means and standard deviations. The column names start with avg_ to reflect this. Otherwise the names follow the same scheme as described in data_set. 
+Each row contains 66 columns with the averages of means and standard deviations. The column names start with avg_ to reflect this. Otherwise the names follow the same scheme as described in data_set. 
 
 ###data_set
 
 Columns data_set data.frame:
 
 Activity
+
 tBodyAcc-mean()-X
+
 tBodyAcc-mean()-Y
+
 tBodyAcc-mean()-Z
+
 tBodyAcc-std()-X
+
 tBodyAcc-std()-Y
+
 tBodyAcc-std()-Z
+
 tGravityAcc-mean()-X
+
 tGravityAcc-mean()-Y
+
 tGravityAcc-mean()-Z
+
 tGravityAcc-std()-X
+
 tGravityAcc-std()-Y
+
 tGravityAcc-std()-Z
+
 tBodyAccJerk-mean()-X
+
 tBodyAccJerk-mean()-Y
+
 tBodyAccJerk-mean()-Z
+
 tBodyAccJerk-std()-X
+
 tBodyAccJerk-std()-Y
+
 tBodyAccJerk-std()-Z
+
 tBodyGyro-mean()-X
+
 tBodyGyro-mean()-Y
+
 tBodyGyro-mean()-Z
+
 tBodyGyro-std()-X
+
 tBodyGyro-std()-Y
+
 tBodyGyro-std()-Z
+
 tBodyGyroJerk-mean()-X
+
 tBodyGyroJerk-mean()-Y
+
 tBodyGyroJerk-mean()-Z
+
 tBodyGyroJerk-std()-X
+
 tBodyGyroJerk-std()-Y
+
 tBodyGyroJerk-std()-Z
+
 tBodyAccMag-mean()
+
 tBodyAccMag-std()
+
 tGravityAccMag-mean()
+
 tGravityAccMag-std()
+
 tBodyAccJerkMag-mean()
+
 tBodyAccJerkMag-std()
+
 tBodyGyroMag-mean()
+
 tBodyGyroMag-std()
+
 tBodyGyroJerkMag-mean()
+
 tBodyGyroJerkMag-std()
+
 fBodyAcc-mean()-X
+
 fBodyAcc-mean()-Y
+
 fBodyAcc-mean()-Z
+
 fBodyAcc-std()-X
+
 fBodyAcc-std()-Y
+
 fBodyAcc-std()-Z
+
 fBodyAccJerk-mean()-X
+
 fBodyAccJerk-mean()-Y
+
 fBodyAccJerk-mean()-Z
+
 fBodyAccJerk-std()-X
+
 fBodyAccJerk-std()-Y
+
 fBodyAccJerk-std()-Z
+
 fBodyGyro-mean()-X
+
 fBodyGyro-mean()-Y
+
 fBodyGyro-mean()-Z
+
 fBodyGyro-std()-X
+
 fBodyGyro-std()-Y
+
 fBodyGyro-std()-Z
+
 fBodyAccMag-mean()
+
 fBodyAccMag-std()
+
 fBodyBodyAccJerkMag-mean()
+
 fBodyBodyAccJerkMag-std()
+
 fBodyBodyGyroMag-mean()
+
 fBodyBodyGyroMag-std()
+
 fBodyBodyGyroJerkMag-mean()
+
 fBodyBodyGyroJerkMag-std()
+

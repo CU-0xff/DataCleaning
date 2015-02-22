@@ -17,7 +17,8 @@ read_in_data <- function() {
   train_data <- read.table(unz(filename, "UCI HAR Dataset/train/X_train.txt"))
   print("Reading y_train.txt")
   train_labels <- read.table(unz(filename, "UCI HAR Dataset/train/y_train.txt"))
-  
+
+  print("Reading label names")
   features <- read.table(unz(filename, "UCI HAR Dataset/features.txt"))
   activity_labels <- read.table(unz(filename, "UCI HAR Dataset/activity_labels.txt"))
   
@@ -27,6 +28,7 @@ read_in_data <- function() {
   
   dataset <- rbind(test, train)
   
+  print("Reducing and naming data")
   #Label columns
   colnames(dataset)[1] <- "Activity"
   colnames(dataset)[2:ncol(dataset)] <- as.vector(features[["V2"]])
@@ -44,17 +46,16 @@ read_in_data <- function() {
   colnames(dataset)[1] <- "Activity"
   
   #Generate means 
-  split_data <- split(data_set, data_set$Activity)
+  split_data <- split(dataset, dataset$Activity)
   averages_lines <- lapply(split_data, function(x) apply(x[,2:ncol(x)], 2, mean))
   averages <- do.call(rbind.data.frame, averages_lines)
   avgcolnames <- lapply(colnames[2:length(colnames)], function(x) paste("avg_", x, sep=""))
   colnames(averages) <- avgcolnames
   
+  print("Exporting datat_set and averages_set")
   data_set <<- dataset
   averages_set <<- averages
   
-  print("Data read in")
-  
-  data_set
+  print("Done...")
   
 }
